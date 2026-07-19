@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Cyber Security Engineer</title>
+<meta name="description" content="Portfolio of a Cyber Security Engineering student — building secure, intelligent systems across AI, IoT and the web.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">
+      <svg viewBox="0 0 100 100" class="loader-ring">
+        <circle cx="50" cy="50" r="44"></circle>
+      </svg>
+      <span class="loader-glyph">&lt;/&gt;</span>
+    </div>
+    <p class="loader-text">
+      <span class="loader-label">initializing</span>
+      <span class="loader-percent">0%</span>
+    </p>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <p class="loader-status">verifying credentials<span class="dots">...</span></p>
+  </div>
+</div>
+
+<!-- ================= CURSOR ================= -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- ================= BACKGROUND CANVAS ================= -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-logo">YN<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certs</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-aos="fade-up"><span class="dot-live"></span> Available for opportunities</p>
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
+          Hi, I'm <span class="gradient-text">Your Name</span>
+        </h1>
+        <h2 class="hero-role" data-aos="fade-up" data-aos-delay="200">
+          Cyber Security Engineering Student
+        </h2>
+        <p class="hero-typed-wrap" data-aos="fade-up" data-aos-delay="300">
+          <span class="typed-prefix">$</span> <span id="typed"></span><span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc" data-aos="fade-up" data-aos-delay="400">
+          First-year engineering student securing systems by day, building AI &amp; IoT
+          prototypes by night. I like turning real-world problems into working code.
+        </p>
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span><i class="fa-solid fa-arrow-up-right"></i>
+          </a>
+          <a href="assets/resume.pdf" download class="btn btn-outline">
+            <span>Download Resume</span><i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span>Contact Me</span><i class="fa-solid fa-paper-plane"></i>
+          </a>
+        </div>
+        <div class="hero-socials" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-photo-frame">
+          <div class="scan-line"></div>
+          <img src="assets/hero.webp" alt="Portrait" class="hero-photo" id="heroPhoto">
+          <div class="frame-corner tl"></div>
+          <div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div>
+          <div class="frame-corner br"></div>
+          <div class="badge-chip badge-top"><i class="fa-solid fa-shield-halved"></i> Secure</div>
+          <div class="badge-chip badge-bottom"><i class="fa-solid fa-circle-check"></i> Verified</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">About</p>
+      <h2>The person behind the profile</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="terminal-card" data-aos="fade-right">
+        <div class="terminal-topbar">
+          <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+          <span class="terminal-title">about-me.sh</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> whoami</p>
+          <p class="output">first-year Cyber Security Engineering student</p>
+          <p><span class="prompt">$</span> cat interests.txt</p>
+          <p class="output">AI · IoT · Networking · Web Development</p>
+          <p><span class="prompt">$</span> ./run_hackathon.sh</p>
+          <p class="output">building solutions under pressure, on a team, on the clock</p>
+          <p><span class="prompt">$</span> status --check</p>
+          <p class="output ok">quick learner · team player · always shipping</p>
+          <p><span class="prompt">$</span> <span class="blink-caret">_</span></p>
+        </div>
+      </div>
+
+      <div class="about-copy" data-aos="fade-left">
+        <p>
+          I'm a first-year Cyber Security Engineering student who got hooked on the idea
+          that every system, physical or digital, has a story about trust: who it lets in,
+          who it keeps out, and why. That's what pulled me toward security — and it's the
+          same curiosity that pushes me into AI, IoT and web development, because none of
+          those fields make sense in isolation anymore.
+        </p>
+        <p>
+          I like problems that don't have a clean textbook answer. Hackathons are where
+          that shows up best — a short clock, a real constraint, and a team figuring it
+          out together. I bring the same energy to sports: quick decisions, reading the
+          play, backing my teammates.
+        </p>
+        <p>
+          Outside of coursework, I'm usually deep in a side project, a CTF, or a rabbit
+          hole about how something I use every day actually works under the hood.
+        </p>
+
+        <div class="about-tags">
+          <span><i class="fa-solid fa-shield-halved"></i> Cyber Security</span>
+          <span><i class="fa-solid fa-brain"></i> AI</span>
+          <span><i class="fa-solid fa-microchip"></i> IoT</span>
+          <span><i class="fa-solid fa-network-wired"></i> Networking</span>
+          <span><i class="fa-solid fa-code"></i> Web Dev</span>
+          <span><i class="fa-solid fa-people-group"></i> Team Player</span>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num" data-count="1">0</span><span class="stat-label">Year into<br>Engineering</span></div>
+          <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">Active<br>Projects</span></div>
+          <div class="stat"><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-label">Committed<br>to Shipping</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Skills</p>
+      <h2>Tools I reach for</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skills-col" data-aos="fade-up">
+        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+        <div class="skill-bar" data-level="75">
+          <div class="skill-top"><span>C</span><span class="skill-pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="85">
+          <div class="skill-top"><span>Python</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="90">
+          <div class="skill-top"><span>HTML</span><span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="85">
+          <div class="skill-top"><span>CSS</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="70">
+          <div class="skill-top"><span>JavaScript</span><span class="skill-pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+      </div>
+
+      <div class="skills-col" data-aos="fade-up" data-aos-delay="150">
+        <h3><i class="fa-solid fa-shield-halved"></i> Security &amp; Systems</h3>
+        <div class="skill-bar" data-level="70">
+          <div class="skill-top"><span>Cyber Security</span><span class="skill-pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="65">
+          <div class="skill-top"><span>Networking</span><span class="skill-pct">65%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="72">
+          <div class="skill-top"><span>Linux</span><span class="skill-pct">72%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="80">
+          <div class="skill-top"><span>Git &amp; GitHub</span><span class="skill-pct">80%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+        <div class="skill-bar" data-level="88">
+          <div class="skill-top"><span>Problem Solving</span><span class="skill-pct">88%</span></div>
+          <div class="skill-track"><div class="skill-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Projects</p>
+      <h2>Things I've built</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card" data-aos="fade-up">
+        <div class="project-top">
+          <span class="project-icon"><i class="fa-solid fa-trophy"></i></span>
+          <span class="project-tag">Hackathon</span>
+        </div>
+        <h3>Smart India Hackathon Projects</h3>
+        <p>A set of problem-statement builds developed under hackathon time pressure —
+          rapid prototyping, team coordination and pitching working software fast.</p>
+        <div class="project-stack">
+          <span>Team Project</span><span>Rapid Prototyping</span><span>Problem Solving</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="#">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-top">
+          <span class="project-icon"><i class="fa-solid fa-seedling"></i></span>
+          <span class="project-tag">AI · IoT</span>
+        </div>
+        <h3>AI-Based Crop Recommendation for Farmers</h3>
+        <p>A software-first system that simulates buried soil sensor data — water level
+          and soil health — to recommend the right crop for a plot, with the same sensor
+          model extendable to automated irrigation control.</p>
+        <div class="project-stack">
+          <span>Python</span><span>ML</span><span>Sensor Simulation</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="#">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-top">
+          <span class="project-icon"><i class="fa-solid fa-tractor"></i></span>
+          <span class="project-tag">Web Platform</span>
+        </div>
+        <h3>Digital Farm Management Portal</h3>
+        <p>A web portal concept for farmers to track crops, resources and schedules in
+          one place, built with a focus on simple, accessible interfaces.</p>
+        <div class="project-stack">
+          <span>HTML/CSS/JS</span><span>UI/UX</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="#">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-aos="fade-up">
+        <div class="project-top">
+          <span class="project-icon"><i class="fa-solid fa-paw"></i></span>
+          <span class="project-tag">AI · Vision</span>
+        </div>
+        <h3>Animal Classification using AI</h3>
+        <p>An image classification model exploring computer vision fundamentals to
+          identify animal species from photos.</p>
+        <div class="project-stack">
+          <span>Python</span><span>Computer Vision</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="#">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-top">
+          <span class="project-icon"><i class="fa-solid fa-landmark"></i></span>
+          <span class="project-tag">Civic Tech</span>
+        </div>
+        <h3>Government Scheme Assistant</h3>
+        <p>A guided assistant concept that helps people find government schemes they're
+          actually eligible for, cutting through scattered information.</p>
+        <div class="project-stack">
+          <span>NLP</span><span>Web App</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="#">Details <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card project-more" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-plus"></i>
+        <h3>More on GitHub</h3>
+        <p>Smaller builds, CTF writeups and experiments live in the repos.</p>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn btn-outline btn-small">
+          <span>Visit GitHub</span><i class="fa-brands fa-github"></i>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Education</p>
+      <h2>How I got here</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Current</span>
+          <h3>B.E. Cyber Security Engineering</h3>
+          <p>First year · Engineering College Name</p>
+          <p class="timeline-desc">Building a foundation across security, networks, programming and systems, while running AI/IoT projects on the side.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Higher Secondary</span>
+          <h3>Class XII</h3>
+          <p>Science Stream · School Name</p>
+          <p class="timeline-desc">Focused on Mathematics and Computer Science, first real exposure to programming.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Secondary</span>
+          <h3>Class X</h3>
+          <p>School Name</p>
+          <p class="timeline-desc">Where curiosity about how computers work first turned into a habit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section id="certifications" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Certifications</p>
+      <h2>Credentials &amp; coursework</h2>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card" data-aos="zoom-in">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Certification Name</h3>
+        <p>Issuing Platform · Year</p>
+      </div>
+      <div class="cert-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Certification Name</h3>
+        <p>Issuing Platform · Year</p>
+      </div>
+      <div class="cert-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Certification Name</h3>
+        <p>Issuing Platform · Year</p>
+      </div>
+      <div class="cert-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Certification Name</h3>
+        <p>Issuing Platform · Year</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section id="achievements" class="section section-alt">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Achievements</p>
+      <h2>Milestones worth mentioning</h2>
+    </div>
+
+    <div class="achieve-grid">
+      <div class="achieve-card" data-aos="fade-up">
+        <i class="fa-solid fa-trophy"></i>
+        <h3>Hackathon Participation</h3>
+        <p>Smart India Hackathon — built and pitched working prototypes under time pressure.</p>
+      </div>
+      <div class="achieve-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Team Leadership</h3>
+        <p>Coordinated cross-functional teammates across design, code and pitch delivery.</p>
+      </div>
+      <div class="achieve-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-futbol"></i>
+        <h3>Sports</h3>
+        <p>Active competitor — sport keeps the same instincts sharp as debugging under pressure.</p>
+      </div>
+      <div class="achieve-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Fast Learner</h3>
+        <p>Comfortable picking up new stacks and domains quickly when a project demands it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <p>Have a project, an idea, or a hackathon team that needs one more builder?
+          My inbox is open.</p>
+        <a href="mailto:you@example.com" class="contact-line">
+          <i class="fa-solid fa-envelope"></i> you@example.com
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="contact-line">
+          <i class="fa-brands fa-github"></i> github.com/yourusername
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="contact-line">
+          <i class="fa-brands fa-linkedin-in"></i> linkedin.com/in/yourusername
+        </a>
+        <div class="contact-orbit" aria-hidden="true">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+      </div>
+
+      <form class="contact-form" data-aos="fade-left" id="contactForm">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me a bit more..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Send Message</span><i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#hero" class="nav-logo">YN<span>.</span></a>
+    <div class="footer-socials">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:you@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+  <p class="footer-note">Designed &amp; built with care. © <span id="year"></span> Your Name. All systems secure.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
